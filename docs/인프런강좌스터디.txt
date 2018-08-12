@@ -1,0 +1,88 @@
+@const : 값 변경 안됨
+let : 다시 선언할 수 없음.
+
+@var 로선언하면 글로벌로 잡힌다
+for(var i =0; i<=3; ~)
+{ }
+log(i)
+=> 4 출력
+
+@Hoisting 선언한 함수와 변수를 가장 상단에 있는 것처럼인식...
+
+@변수 선언문과 함수선언문 메모리 할당이 일어나고 값 할당 연산이 그 다음에 일어난다
+
+스캐폴딩?
+
+default를 넣으면 하나의 export밖에 되지않음.
+
+Flux 패턴
+
+state = data
+getters = computed
+mutations = methods
+actions = 비동기methods
+
+부모에서는 props만 내리고 자식에서는 이벤트만 보낸다...
+
+action : 화면에서 발생하는 이벤트 / 사용자 입력
+dispatcher : 데이터를 변경하는 방법.. 메서드
+model
+view
+
+mvc 패턴의 문제점 : 모델과 뷰가 양방향으로 통신하기 때문에 추적이 어려워진다.
+
+settimeout이나 서버api콜 같은 것을 actions에서 처리...
+비동기 로직만 처리하고 데이터를 바꾸진 않음...
+그러한 처리는 mutations에서함.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

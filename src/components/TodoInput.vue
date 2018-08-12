@@ -4,22 +4,22 @@
     <span class="addContainer" v-on:click="addTodo">
       <i class="fas fa-asterisk addBtn"></i>
     </span>
+
     <Modal v-if="showModal" @close="showModal = false">
-    <!--
-      you can use custom content here to overwrite
-      default content
-    -->
-    <h3 slot="header">
-      Warning
-      <i class="fas fa-times" @click="showModal=false"></i>
-    </h3>
-    <h3 slot="body">아모고토 입력하지 않았</h3>
-  </Modal>
+      <h3 slot="header">
+        경고
+        <i class="closeModalBtn fas fa-times" @click="showModal=false"></i>
+      </h3>
+      <div slot="body">
+        뭐좀 입력해라
+      </div>
+    </Modal>
   </div>
 </template>
 
 <script>
 import Modal from './common/Modal.vue'
+
 export default {
   data(){
     return{
@@ -30,10 +30,11 @@ export default {
   methods:{
     addTodo(){
       if(this.newTodoItem !== ''){
-        this.$emit('addTodoItem', this.newTodoItem); //버튼 클릭하 addTodoItem 이벤트 트리거
+        // this.$emit('addTodoItem', this.newTodoItem); //버튼 클릭하 addTodoItem 이벤트 트리
+        this.$store.commit('addOneItem', this.newTodoItem);
         this.clearInput();
-      } else{
-          this.showModal = !this.showModal;
+      } else {
+        this.showModal = !this.showModal;
       }
     },
     clearInput(){
@@ -70,9 +71,6 @@ input:focus{
 .addBtn {
   color:white;
   vertical-align: middle;
-}
-.closeModalBtn{
-  color: #42b983;
 }
 
 </style>
